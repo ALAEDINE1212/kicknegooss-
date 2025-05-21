@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Responsive on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KickNegoss Dashboard</title>
+
+  <!-- PWA manifest & theme -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1e40af"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- App logic -->
+  <script type="module" src="app.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen" class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Sign In</h2>
+    <input id="email"    type="email"    placeholder="Email"    class="input mb-3" />
+    <input id="password" type="password" placeholder="Password" class="input mb-4" />
+    <button id="login-btn" class="btn w-full">Log In</button>
+    <p id="login-error" class="text-red-600 mt-2 hidden"></p>
+  </div>
+
+  <!-- DASHBOARD (hidden until login) -->
+  <div id="dashboard" class="hidden w-full max-w-3xl mt-6 flex-grow">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center mb-6">
+      <h1 id="welcome" class="text-3xl font-bold text-blue-800"></h1>
+      <button id="logout-btn" class="btn-sm bg-red-600 hover:bg-red-700">Logout</button>
+    </div>
+
+    <!-- 1) WORK LIST -->
+    <div id="work-list-view" class="hidden">
+      <h2 id="work-list-title" class="text-xl font-semibold mb-4 text-gray-700"></h2>
+      <div id="works-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+
+    <!-- 2) SECTION LIST -->
+    <div id="section-list-view" class="hidden relative bg-gray-50 p-6 rounded-lg shadow-sm">
+      <button id="back-to-works"
+              class="btn-sm absolute top-4 left-4 bg-gray-200 hover:bg-gray-300">← Back</button>
+      <h2 id="section-list-title"
+          class="text-xl font-semibold mb-6 text-center text-gray-800"></h2>
+      <div id="section-cards" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+    </div>
+
+    <!-- 3) SECTION DETAIL -->
+    <div id="section-detail-view" class="hidden relative bg-gray-50 p-6 rounded-lg shadow-sm">
+      <button id="back-to-sections"
+              class="btn-sm absolute top-4 left-4 bg-gray-200 hover:bg-gray-300">← Back</button>
+      <h2 id="section-detail-title"
+          class="text-xl font-semibold mb-4 text-gray-800 text-center"></h2>
+      <div id="section-detail-content" class="bg-white p-6 rounded-lg shadow-md"></div>
+    </div>
+
+  </div>
+</body>
+</html>
+

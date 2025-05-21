@@ -1,0 +1,30 @@
+/* Input fields */
+.input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg
+         focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* Primary button */
+.btn {
+  @apply bg-blue-700 text-white py-2 rounded-lg
+         hover:bg-blue-800 focus:ring-2 focus:ring-blue-500 transition;
+}
+
+/* Smaller button */
+.btn-sm {
+  @apply bg-blue-600 text-white px-4 py-2 rounded-lg
+         hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 transition text-sm;
+}
+
+/* Work card: box with rounded corners */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;      /* Tailwind gray-200 */
+  border-radius: 0.75rem;          /* Tailwind rounded-xl */
+  padding: 1rem;                   /* Tailwind p-4 */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s ease-in-out;
+}
+.card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
